@@ -1,0 +1,29 @@
+.slider-pagination {
+      margin-bottom: 45px;
+      margin-top: 43px;
+      position: absolute;
+      left: 0;
+      right: 0;
+        &__controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__control {
+            .pagination-circle();
+            background: @bg--grey;
+            width: 6px;
+            height: 6px;
+
+        &--active {
+         .pagination-circle();
+          background: @bg--white;
+          width: 6px;
+          height: 6px;
+          border: 3px solid @border-blue;
+        }
+      }
+    @media (min-width: @screen-md) {
+      .hidden();
+    }
+}

@@ -1,0 +1,71 @@
+.reviews-pagination {
+
+  &__arrows {
+    @media (max-width: 1199px) {
+      .hidden();
+    }
+    position: relative;
+}
+
+ &__left {
+   pointer-events: none;
+
+ &::after {
+   .arrow();
+   background: url('../img/slider-reviews-left.svg') no-repeat right top;
+   top: -240px;
+   left: 10.75%;
+   pointer-events: all;
+ }
+ }
+ &__right {
+   pointer-events: none;
+&::after {
+   .arrow();
+   background: url('../img/slider-reviews-right.svg') no-repeat right top;
+   top: -240px;
+   right: 10.75%;
+   pointer-events: all;
+ }
+ }
+
+        &__controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (min-width: 800px) and (max-width: 1199px) {
+            padding-left: 5.714286%;
+            }
+            @media(min-width: @screen-lg) {
+              .hidden();
+            }
+        }
+        &__control {
+            .pagination-circle();
+            background: @bg--grey;
+            width: 6px;
+            height: 6px;
+
+
+        &--active {
+         .pagination-circle();
+          background: @bg--white;
+          width: 6px;
+          height: 6px;
+          border: 3px solid @border-blue;
+        }
+        @media (max-width: 699px) {
+          margin-top: 35px;
+          margin-bottom: 41px;
+        }
+
+    @media (min-width: @screen-md) and (max-width: 1199px) {
+      margin-top: 36px;
+      margin-bottom: 75px;
+}
+    @media (min-width: @screen-lg) {
+
+    }
+}
+}

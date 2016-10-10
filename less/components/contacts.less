@@ -1,0 +1,61 @@
+.contacts {
+  background: url("../img/map-bg-middle.jpg") top center;
+  width: 100%;
+
+  @media (max-width: 699px) {
+  height: 616px;
+}
+
+
+&__flex-container {
+  position: relative;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: @bg--white;
+}
+&__details {
+  .horizontal-padding(9.375%; 9.375%);
+}
+  &__title {
+    .h2-style();
+      color: @text--blue;
+      background: @bg--white;
+      margin-bottom: 0;
+}
+        span {
+          display: block;
+        }
+    h3 {
+      font-size: @font-size--h3;
+      .bold();
+      .text-center();
+    }
+    p {
+      font-size: @font-size--middle;
+      .light();
+      color: @decor-pink;
+      .text-center();
+    }
+  &__popup-map {
+    position: relative;
+  }
+@media (min-width: @screen-md) and (max-width: 1199px) {
+  height: 780px;
+  margin-bottom: 35px;
+    &__title {
+      font-size: @font-size--large;
+    }
+    h3 {
+      font-size: @font-size--middle;
+    }
+    p {
+      font-size: @font-size--h2;
+    }
+  }
+  @media (min-width: @screen-lg) {
+    margin-bottom: 70px;
+  }
+}

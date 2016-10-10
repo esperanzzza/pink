@@ -1,0 +1,113 @@
+.container() {
+
+
+  @media (max-width: 699px) {
+  width: @width-container--xs;
+}
+  @media (min-width: @screen-md) and (max-width: 1199px) {
+    width: @width-container--md;
+    .horizontal-padding(5.714286%, 5.714286%);
+  }
+
+  @media(min-width: @screen-lg) {
+    width: @width-container--lg;
+    .horizontal-padding(10.83%, 10.83%);
+}
+}
+.ul-unstyled() {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.link-unstyled() {
+  text-decoration: none;
+}
+.uppercase() {
+  text-transform: uppercase;
+}
+.hidden() {
+  display: none;
+}
+
+.block() {
+  display: block;
+}
+
+.bold() {
+  font-weight: bold;
+}
+.light() {
+  font-weight: 300;
+}
+.regular() {
+  font-weight: 400;
+}
+.text-center() {
+  text-align: center;
+}
+.pagination-circle() {
+  display: block;
+  border-radius: 50%;
+  margin-right: 6.4%;
+}
+.link-focus(@a) when (iscolor(@a)) {
+ color: fade(@a, 30%);
+ }
+ .bg-fade(@a) when (iscolor(@a)) {
+   background-color: fade(@a, 30%)
+ }
+ .toggle-icon(@width, @height) {
+   display: block;
+   text-indent: -9999px;
+   width: @width;
+   height: @height;
+   background-size: @width  @height;
+   fill: @color-white;
+ }
+.h2-style() {
+  font-size: 1.5rem;
+  text-align: center;
+  .light();
+}
+.vertical-padding(@padding-top, @padding-bottom) {
+  padding-top: @padding-top;
+  padding-bottom: @padding-bottom;
+}
+.horizontal-padding(@padding-left: 6.25%, @padding-right: 6.25%) {
+  padding-left: @padding-left;
+  padding-right: @padding-right;
+}
+.bg-grey-mask(@height) {
+position: absolute;
+content: '';
+display: block;
+width: 100%;
+height: @height;
+background-image: linear-gradient(to left top, @bg--lightgrey 50%, #fff 50%);
+}
+.feature(@width, @height, @color) {
+  position: absolute;
+  content: "";
+  width: @width;
+  height: @height;
+  fill: @color;
+  right: 0;
+}
+.information-promo-bg(@width, @height) {
+  position: absolute;
+  content: '';
+  width: @width;
+  height: @height;
+}
+.timer(@width, @height) {
+    position: absolute;
+    content: '';
+    width: @width;
+    height: @height;
+}
+.arrow() {
+  position: absolute;
+  content: "";
+  width:21.706px;
+  height: 41.719px;
+}
