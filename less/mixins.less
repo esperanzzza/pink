@@ -1,89 +1,105 @@
 .container() {
-
-
-  @media (max-width: 699px) {
-  width: @width-container--xs;
+    box-sizing: border-box;
+    @media (max-width: 699px) {
+        .horizontal-padding(6.25%, 6.25%);
+    }
+    @media (min-width: @screen-md) and (max-width: 1199px) {
+        .horizontal-padding(5.714286%, 5.714286%);
+    }
+    @media(min-width: @screen-lg) {
+        .horizontal-padding(10.83%, 10.83%);
+    }
 }
-  @media (min-width: @screen-md) and (max-width: 1199px) {
-    width: @width-container--md;
-    .horizontal-padding(5.714286%, 5.714286%);
-  }
-
-  @media(min-width: @screen-lg) {
-    width: @width-container--lg;
-    .horizontal-padding(10.83%, 10.83%);
-}
+.font(@font-name; @url-name: @font-name; @weight: 400; @style: normal) {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans/@{url-name}.eot');
+  src: url('../fonts/open-sans/@{url-name}.eot#iefix') format('embedded-opentype'),
+  url('../fonts/open-sans/@{url-name}.woff') format('woff'),
+  url('../fonts/open-sans/@{url-name}.woff') format('woff2'),
+  url('../fonts/open-sans/@{url-name}.ttf') format('truetype');
+  font-weight: @weight;
+  font-style: @style;
 }
 .ul-unstyled() {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 .link-unstyled() {
-  text-decoration: none;
+    text-decoration: none;
 }
 .uppercase() {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 .hidden() {
-  display: none;
+    display: none;
 }
-
 .block() {
-  display: block;
+    display: block;
 }
-
 .bold() {
-  font-weight: bold;
+    font-weight: bold;
 }
 .light() {
-  font-weight: 300;
+    font-weight: 300;
 }
 .regular() {
-  font-weight: 400;
+    font-weight: 400;
 }
 .text-center() {
-  text-align: center;
+    text-align: center;
 }
 .pagination-circle() {
-  display: block;
-  border-radius: 50%;
-  margin-right: 6.4%;
+    display: block;
+    border-radius: 50%;
+    margin-right: 6.4%;
 }
 .link-focus(@a) when (iscolor(@a)) {
- color: fade(@a, 30%);
- }
- .bg-fade(@a) when (iscolor(@a)) {
-   background-color: fade(@a, 30%)
- }
- .toggle-icon(@width, @height) {
-   display: block;
-   text-indent: -9999px;
-   width: @width;
-   height: @height;
-   background-size: @width  @height;
-   fill: @color-white;
- }
+    color: fade(@a, 30%);
+}
+.circle-background(@a) when (ispercentage(@a)) {
+    background-color: fade(@bg--blue, @a);
+}
+.icon-active(@a) when (iscolor(@a)) {
+    fill: fade(@a, 30%);
+}
+.bg-fade(@a) when (iscolor(@a)) {
+    background-color: fade(@a, 30%);
+}
+.toggle-icon(@width, @height) {
+    display: block;
+    text-indent: -9999px;
+    width: @width;
+    height: @height;
+    background-size: @width @height;
+    fill: @color-white;
+}
 .h2-style() {
-  font-size: 1.5rem;
-  text-align: center;
-  .light();
+    font-size: 1.5rem;
+    text-align: center;
+    .light();
+}
+.normalize-text() {
+    margin: 0;
+    padding: 0;
 }
 .vertical-padding(@padding-top, @padding-bottom) {
-  padding-top: @padding-top;
-  padding-bottom: @padding-bottom;
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
 }
-.horizontal-padding(@padding-left: 6.25%, @padding-right: 6.25%) {
-  padding-left: @padding-left;
-  padding-right: @padding-right;
+.horizontal-padding(@padding-left:6.25%, @padding-right: 6.25%) {
+    padding-left: @padding-left;
+    padding-right: @padding-right;
 }
 .bg-grey-mask(@height) {
-position: absolute;
-content: '';
-display: block;
-width: 100%;
-height: @height;
-background-image: linear-gradient(to left top, @bg--lightgrey 50%, #fff 50%);
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: @height;
+    background-image: linear-gradient(to left top, @bg--lightgrey 50%, #fff 50%);
+    top: -20px;
+    left: 0;
 }
 .feature(@width, @height, @color) {
   position: absolute;
@@ -94,10 +110,10 @@ background-image: linear-gradient(to left top, @bg--lightgrey 50%, #fff 50%);
   right: 0;
 }
 .information-promo-bg(@width, @height) {
-  position: absolute;
-  content: '';
-  width: @width;
-  height: @height;
+    position: absolute;
+    content: '';
+    width: @width;
+    height: @height;
 }
 .timer(@width, @height) {
     position: absolute;
@@ -106,8 +122,9 @@ background-image: linear-gradient(to left top, @bg--lightgrey 50%, #fff 50%);
     height: @height;
 }
 .arrow() {
-  position: absolute;
-  content: "";
-  width:21.706px;
-  height: 41.719px;
+    position: absolute;
+    content: "";
+    width: 21.706px;
+    height: 41.719px;
+    cursor: pointer;
 }

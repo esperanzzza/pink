@@ -1,211 +1,194 @@
-
 .price {
-  background: @bg--lightgrey;
-  position: relative;
-  .vertical-padding(70px, 100px);
-
-  &::after {
-      @media (max-width: 699px) {
-     .bg-grey-mask(25px);
-     top: -20px;
-     left: 0;
-  }
+    background: @bg--lightgrey;
+    position: relative;
+    .vertical-padding(70px, 100px);
+    &::after {
+        @media (max-width: 699px) {
+            .bg-grey-mask(25px);
+        }
+        @media (min-width: @screen-md) and (max-width: 1199px) {
+            .bg-grey-mask(53px);
+        }
+        @media (min-width: @screen-lg) {
+            .bg-grey-mask(80px);
+        }
+    }
+    &__promo-title {
+        position: relative;
+        .vertical-padding(16px, 16px);
+        background: @bg--blue;
+        font-size: @font-size--h3;
+        color: @text--white;
+        .uppercase();
+        .text-center();
+        border: 2px solid @border--lightgrey;
+        border-bottom: transparent;
+        border-left: transparent;
+        &--border-left {
+            border-left: 2px solid @border--lightgrey;
+        }
+        &--hit::before {
+            position: absolute;
+            content: '';
+            background: url('../img/flag-hit.png') left top no-repeat;
+            width: 72px;
+            height: 73px;
+            left: 0;
+            top: 0;
+            z-index: 10;
+        }
+        h3 {
+            .bold();
+            margin: 0;
+        }
+        span {
+            .light();
+        }
+    }
+    &__promo-list {
+        .ul-unstyled();
+        background: @bg--white;
+    }
+    &__feature {
+        .vertical-padding(17px, 17px);
+        color: @text--blue;
+        line-height: 2.1;
+        .horizontal-padding();
+        .uppercase();
+        border: 2px solid @border--lightgrey;
+        border-left: transparent;
+        border-bottom: transparent;
+    }
+    &__feature-in {
+        position: relative;
+        display: block;
+        width: inherit;
+        &::after {
+            .feature(30.375px, 21.688px, @color-green);
+            background: url('../img/yes-icon.svg') no-repeat;
+        }
+    }
+    &__feature-out {
+        position: relative;
+        display: block;
+        width: inherit;
+        &::after {
+            .feature(26.752px, 26.752px, @color-red);
+            background: url('../img/no-icon.svg') no-repeat;
+        }
+    }
+    &__promo-list {
+        li:last-child {
+            border-bottom: 2px solid @border--lightgrey;
+        }
+    }
+    &__promo-list--basis {
+        li {
+            border-left: 2px solid @border--lightgrey;
+        }
+    }
+    @media (max-width: 699px) {
+        padding-left: 6.25%;
+        margin-bottom: 45px;
+        &__promo-slider-wrapper {
+            width: 300%;
+            height: 300px;
+            position: relative;
+            overflow: visible;
+        }
+        &__promo-slider--js {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            overflow: hidden;
+        }
+        &__promo-slide--hidden {
+            .hidden();
+        }
+        &__promo-slide--js {
+            width: 100%;
+            height: 100%;
+        }
+        &__feature-in::after,
+        &__feature-out::after {
+            background-position: right top;
+        }
+    }
     @media (min-width: @screen-md) and (max-width: 1199px) {
-     .bg-grey-mask(53px);
-     top: -20px;
-     left: 0;
-  }
-}
-  &__promo-title {
-  position: relative;
-  .vertical-padding(16px, 16px);
-  background: @bg--blue;
-  font-size: @font-size--h3;
-  color: @text--white;
-  .uppercase();
-  .text-center();
-  border: 2px solid @border--lightgrey;
-  border-bottom: transparent;
-  border-left: transparent;
-
-  &--border-left {
-  border-left: 2px solid @border--lightgrey;
-  }
-
-  &--hit::before {
-  position: absolute;
-  content:'';
-  background: url('../img/flag-hit.png') left top no-repeat;
-  width: 72px;
-  height: 73px;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  }
-
-  h3 {
-  .bold();
-  margin: 0;
-  }
-
-  span {
-  .light();
-  }
-  }
-  &__promo-list {
-    .ul-unstyled();
-  }
-
-  &__feature {
-  .vertical-padding(17px, 17px);
-  color: @text--blue;
-  line-height: 2.1;
-  .horizontal-padding();
-  .uppercase();
-  border: 2px solid @border--lightgrey;
-  border-left: transparent;
-  border-bottom: transparent;
-  }
-  &__feature-in {
-    position: relative;
-    display: block;
-    width: inherit;
-
-  &::after {
-  .feature(30.375px, 21.688px, @color-green);
-  background: url('../img/yes-icon.svg') no-repeat;
-  }
-  }
-  &__feature-out {
-  position: relative;
-  display: block;
-  width: inherit;
-
-  &::after {
-  .feature(26.752px, 26.752px, @color-red);
-  background: url('../img/no-icon.svg') no-repeat;
-  }
-  }
-  &__promo-list {
-  li:last-child {
-    border-bottom: 2px solid @border--lightgrey;
-  }
-  }
-  &__promo-list--basis  {
-  li {
-  border-left: 2px solid @border--lightgrey;
-  }
-  }
-
-  @media (max-width: 699px) {
-  padding-left: 6.25%;
-
-  &__promo-slider-wrapper {
-    width: 300%;
-    height: 300px;
-    position: relative;
-    overflow: visible;
-  }
-  &__promo-slider--js {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    overflow: hidden;
-  }
-  &__promo-slide--hidden {
-    .hidden();
-  }
-    &__promo-slide--js {
-      width: 100%;
-      height: 100%;
-
-  }
-  &__feature-in::after,
-  &__feature-out::after {
-    background-position: right top;
-  }
-}
- @media (min-width: @screen-md) and (max-width: 1199px) {
-
-   &__inner {
-     .container();
-   }
-
-&__promo-slider {
-  display: flex;
-  width: 100%;
-}
-&__promo-slide {
-  width: 7.7%;
-}
-&__promo-list {
-  font-size: 0;
-
-&--left {
-  font-size: @font-size--base;
-  .ul-unstyled();
-  margin-top: 84px;
-}
-}
-&__feature {
-  height: 12px;
-
-&--text {
-  border-left: 2px solid @border--lightgrey;
-  border-right: transparent;
-  .vertical-padding(10px, 24px);
-}
-}
-&__feature-in::after,
-&__feature-out::after  {
-  left: 45%;
-  top: -8px;
-}
-&__promo-title {
-  font-size: @html-size-base;
-
-&--hit::before {
-  background-size: 78%;
-}
-}
-}
-@media (min-width:  @screen-lg) {
-  font-size: @font-size--middle;
-  &__inner {
-    .container();
-  }
-
-&__promo-slider {
- display: flex;
- width: 100%;
-}
-
-  &__promo-slide {
-  width: 6.7%;
-}
-&__promo-list {
-  font-size: 0;
-
-&--left {
-  .ul-unstyled();
-  font-size: @font-size--middle;
-  margin-top: 103px;
-}
-}
-&__feature {
-  height: 22px;
-
-&--text {
-  border-left: 2px solid @border--lightgrey;
-  border-right: transparent;
-  .vertical-padding(12px, 22px);
-}
-}
-&__feature-in::after,
-&__feature-out::after  {
-  left: 45%;
-  top: 0;
-}
-}
+        margin-bottom: 50px;
+        &__inner {
+            .container();
+        }
+        &__promo-slider {
+            display: flex;
+            width: 100%;
+        }
+        &__promo-slide {
+            width: 7.7%;
+        }
+        &__promo-list {
+            font-size: 0;
+            &--left {
+                font-size: @font-size--base;
+                .ul-unstyled();
+                margin-top: 84px;
+            }
+        }
+        &__feature {
+            height: 12px;
+            &--text {
+                border-left: 2px solid @border--lightgrey;
+                border-right: transparent;
+                .vertical-padding(10px, 24px);
+            }
+        }
+        &__feature-in::after,
+        &__feature-out::after {
+            left: 45%;
+            top: -8px;
+        }
+        &__promo-title {
+            font-size: @html-size-base;
+            &--hit::before {
+                background-size: 78%;
+            }
+        }
+    }
+    @media (min-width: @screen-lg) {
+        font-size: @font-size--middle;
+        margin-bottom: 75px;
+        &__inner {
+            .container();
+            padding-top: 70px;
+        }
+        &__promo-slider {
+            display: flex;
+            width: 100%;
+        }
+        &__promo-slide {
+            width: 6.7%;
+        }
+        &__promo-list {
+            font-size: 0;
+            &--left {
+                .ul-unstyled();
+                font-size: @font-size--middle;
+                margin-top: 103px;
+            }
+        }
+        &__feature {
+            height: 22px;
+            &--text {
+                border-left: 2px solid @border--lightgrey;
+                border-right: transparent;
+                .vertical-padding(12px, 22px);
+            }
+        }
+        &__feature-in::after,
+        &__feature-out::after {
+            left: 45%;
+            top: 0;
+        }
+    }
 }

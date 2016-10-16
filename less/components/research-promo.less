@@ -1,74 +1,75 @@
 .research-promo {
-
-  @media (max-width: 699px) {
-    &--hidden {
-    .hidden();
-  }
-}
-@media (min-width: @screen-md) and (max-width: 1199px) {
-  padding-bottom: 80px;
-}
-
-   &__inner {
-    .container();
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-&__diagram {
-  position: relative;
-  margin-top: 120px;
-  margin-left: 24px;
-
-
-&::before {
-  .timer(298.644px, 345.835px);
-  background: url('../img/timer-tablet.svg') no-repeat top left;
-  top: -69%;
-  left: -16%;
-}
-}
+    @media (max-width: 699px) {
+        &--hidden {
+            .hidden();
+        }
+    }
+    @media (min-width: @screen-md) and (max-width: 1199px) {
+        padding-bottom: 80px;
+    }
+    &__inner {
+        .container();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__diagram {
+        position: relative;
+        margin-top: 120px;
+        margin-left: 24px;
+        &::before {
+            .timer(298.644px, 345.835px);
+            background: url('../img/timer-tablet.svg') no-repeat top left;
+            top: -69%;
+            left: -16%;
+        }
+    }
     &__hours {
-      color: @decor-pink;
-      font-size: 6.5rem;
-      line-height: 1.6;
-      padding: 14% 42px;
-      border: 12px solid @decor-pink;
-      border-radius: 50%;
-      .regular();
+        color: @decor-pink;
+        font-size: 6.5rem;
+        line-height: 1.6;
+        padding: 14% 42px;
+        border: 12px solid @decor-pink;
+        border-radius: 50%;
+        .regular();
     }
-   &__text {
-    padding-left: 10%;
-}
-&__title {
-  font-size: 1.875rem;
-  line-height: 1.2;
-}
-&__description {
-  color: @text--blue;
-}
-&__more-link {
-  color: @decor-pink;
-  text-decoration: underline;
-}
-  @media (min-width: @screen-lg) {
-  background-color: @bg--lightgrey;
-  padding-bottom: 140px;
-  padding-top: 80px;
-  margin-bottom: 80px;
-
-  &__diagram {
-    &::before {
-      background: url('../img/timer-desctop.svg') no-repeat top left;
+    &__text {
+        padding-left: 10%;
     }
-  }
-&__text {
-
-}
-  &__description {
-    font-size: @font-size--middle;
-    width: 65%;
-  }
-}
+    &__title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+    &__description {
+        color: @text--blue;
+    }
+    &__more-link {
+        color: @decor-pink;
+        text-decoration: underline;
+        &:hover {
+            color: @color-blue;
+        }
+        &:focus {
+            .link-focus(@color-blue);
+        }
+    }
+    @media (min-width: @screen-lg) {
+        background-color: @bg--lightgrey;
+        padding-bottom: 140px;
+        padding-top: 80px;
+        margin-bottom: 80px;
+        font-size: @font-size--middle;
+        &__diagram {
+            &::before {
+                background: url('../img/timer-desctop.svg') no-repeat top left;
+            }
+        }
+        &__description {
+            width: 65%;
+            margin-bottom: 35px;
+        }
+        &__more-link {
+            .normalize-text();
+        }
+    }
 }
