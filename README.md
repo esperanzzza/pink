@@ -1,6 +1,6 @@
 #**“Pink”**
 ##**HTML Academy project**
-- Adaptive design
+- Responsive design
 - BEM methodology
 - LESS
 - JavaScript API
