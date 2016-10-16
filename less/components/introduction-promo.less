@@ -47,7 +47,6 @@
                 width: 100%;
                 right: 5.714286%;
                 top: -258px;
-                
                 @media (min-width: 826px) and (max-width: 996px) {
                     top: -266px;
                 }
@@ -66,21 +65,23 @@
             }
         }
         @media (min-width: @screen-lg) {
-            background: url('../img/iphone-hand-3@1x.png') no-repeat center top;
-            height: 645px;
-            width: 100%;
-            top: -196px;
-            left: 0;
-        }
-        &__operation-system-logo {
-            width: 17.5%;
-            justify-content: space-between;
-            margin-left: 6%;
-        }
-        &__available {
-            width: 25%;
-            margin-left: 5%;
-            line-height: @line-height--narrow;
+            &--header {
+                background: url('../img/iphone-hand-3@1x.png') no-repeat center top;
+                height: 645px;
+                width: 100%;
+                top: -196px;
+                left: 0;
+            }
+            &__operation-system-logo {
+                width: 17.5%;
+                justify-content: space-between;
+                margin-left: 8.6%;
+            }
+            &__available {
+                width: 25%;
+                margin-left: 5%;
+                line-height: @line-height--narrow;
+            }
         }
     }
 }
