@@ -80,13 +80,39 @@
             .regular();
             line-height: 1;
             border-bottom: 2px solid transparent;
-            &:hover {
-                border-bottom: 2px solid @main-nav-color;
+               .hvr-underline-from-center {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px transparent;
+              position: relative;
+              overflow: hidden;
+          } 
+            &:before {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              left: 50%;
+              right: 50%;
+              bottom: 0;
+              background: @color-white;
+              height: 2px;
+              -webkit-transition-property: left, right;
+              transition-property: left, right;
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-timing-function: ease-out;
+              transition-timing-function: ease-out;
             }
-            &:focus {
-                opacity: 0.3;
-                border-bottom: 2px solid transparent;
+            &:hover:before, 
+            &:focus:before, 
+            &:active:before {
+              left: 0;
+              right: 0;
             }
+           }
+         }
         }
-    }
-}
+
+
